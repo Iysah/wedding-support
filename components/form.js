@@ -1,4 +1,5 @@
 // PaymentForm.js
+'use client'
 import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { usePaystackPayment } from 'react-paystack';
@@ -79,6 +80,7 @@ const PaymentForm = () => {
       await updateTransactionStatus(config.reference, 'successful');
       alert('Payment successful!');
     } catch (error) {
+      console.log(error)
       setError('Error updating payment status');
     }
   };
